@@ -1,20 +1,18 @@
 class Solution:
     def unequalTriplets(self, nums: List[int]) -> int:
+        d = {}
+        for i in nums:
+            if i in d:
+                d[i] += 1
+            else:
+                d[i] = 1
+        if len(d) < 3: return 0
         count = 0
-        for i in range(len(nums)-2):
-            j = i + 1 
-            k = i + 2
-            while(j < len(nums)-1):
-                if(nums[i] != nums[j] and nums[j] != nums[k] and nums[k] != nums[i]):
-                    count += 1
-                    k += 1
-                elif (nums[i] == nums[k] or nums[j] == nums[k]):
-                    k += 1
-                elif (nums[j] == nums[i]):
-                    j += 1
-                    k = j + 1
-                if (k > len(nums) - 1):
-                    j += 1
-                    k = j + 1
+        vals = list(d.keys())
+        lenvals = len(vals)
+        for i in range(lenvals):
+            for j in range(i + 1, lenvals):
+                for k in range(j + 1, lenvals):
+                    count += (d[vals[i]] * d[vals[j]] * d[vals[k]])
         return count
         
