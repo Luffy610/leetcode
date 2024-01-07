@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/number-of-unequal-triplets-in-array/">2475. Number of Unequal Triplets in Array</a></h2><h3>Easy</h3><hr><div><p>You are given a <strong>0-indexed</strong> array of positive integers <code>nums</code>. Find the number of triplets <code>(i, j, k)</code> that meet the following conditions:</p>
+<h2><a href="https://leetcode.com/problems/number-of-unequal-triplets-in-array">2475. Number of Unequal Triplets in Array</a></h2><h3>Easy</h3><hr><p>You are given a <strong>0-indexed</strong> array of positive integers <code>nums</code>. Find the number of triplets <code>(i, j, k)</code> that meet the following conditions:</p>
 
 <ul>
 	<li><code>0 &lt;= i &lt; j &lt; k &lt; nums.length</code></li>
@@ -14,7 +14,8 @@
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
-<pre><strong>Input:</strong> nums = [4,4,2,4,3]
+<pre>
+<strong>Input:</strong> nums = [4,4,2,4,3]
 <strong>Output:</strong> 3
 <strong>Explanation:</strong> The following triplets meet the conditions:
 - (0, 2, 4) because 4 != 2 != 3
@@ -26,7 +27,8 @@ Note that (2, 0, 4) is not a valid triplet because 2 &gt; 0.
 
 <p><strong class="example">Example 2:</strong></p>
 
-<pre><strong>Input:</strong> nums = [1,1,1,1,1]
+<pre>
+<strong>Input:</strong> nums = [1,1,1,1,1]
 <strong>Output:</strong> 0
 <strong>Explanation:</strong> No triplets meet the conditions so we return 0.
 </pre>
@@ -38,4 +40,3 @@ Note that (2, 0, 4) is not a valid triplet because 2 &gt; 0.
 	<li><code>3 &lt;= nums.length &lt;= 100</code></li>
 	<li><code>1 &lt;= nums[i] &lt;= 1000</code></li>
 </ul>
-</div>
