@@ -1,8 +1,8 @@
 class Solution:
-    def singleNumber(self, nums: List[int]) -> int:
-        countNums={}
-        for i in range(len(nums)):
-            countNums[nums[i]] = countNums.get(nums[i], 0) + 1
-        for num, value in countNums.items():
-            if value == 1:
-                return num
+    def singleNumber(self, nums):
+        ones = 0
+        twos = 0
+        for num in nums:
+            ones = (ones ^ num) & ~twos
+            twos = (twos ^ num) & ~ones
+        return ones
