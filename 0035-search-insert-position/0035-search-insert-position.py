@@ -10,7 +10,6 @@ class Solution:
                 left = middle + 1
             else:
                 right = middle - 1
-        print(middle)
         if nums[middle] > target:
             if middle == 0:
                 return 0
