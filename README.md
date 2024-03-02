@@ -1,1 +1,1 @@
-My daily leetcode solution.
+My daily leetcode solution..
