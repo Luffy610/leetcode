@@ -1,27 +1,24 @@
-#Optimal Approach T.C: O(N) S.C.: O(1)
-
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 class Solution:
     def rotateRight(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
-        if head is None:
-            return None
-
-        curr = head
-        size = 1
-
-        # calculating length and making a circular loop
-        while curr.next is not None:
-            curr = curr.next
-            size += 1
-
-        curr.next = head
-
-        # cut from the rotating point
-        i = size - (k % size)
-
-        while i > 1:
-            head = head.next
-            i -= 1
-
-        curr = head.next
-        head.next = None
-        return curr
+        if not head or k == 0:
+            return head
+        length = 1
+        tail = head
+        while tail.next:
+            length += 1
+            tail = tail.next
+        k = k % length
+        if k == 0:
+            return head
+        newTail = head
+        for i in range(length - k - 1):
+            newTail = newTail.next
+        newHead = newTail.next
+        newTail.next = None
+        tail.next = head
+        return newHead
